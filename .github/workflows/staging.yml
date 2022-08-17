@@ -43,7 +43,7 @@ jobs:
           envs: 'NODE_ENV'
           script: |
             cd ~/projects/mono-server
-            npm i --non-interactive
+            yarn --non-interactive
             node ace build --production
             cd build
             yarn install --production
