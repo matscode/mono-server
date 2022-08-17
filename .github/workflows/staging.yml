@@ -46,6 +46,6 @@ jobs:
             npm i --non-interactive
             node ace build --production
             cd build
-            npm ci --production
+            yarn install --production
             node ace migration:run --force
             pm2 restart MonoServer
