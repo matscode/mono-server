@@ -43,6 +43,10 @@ jobs:
           envs: 'NODE_ENV'
           script: |
             cd ~/projects/mono-server
-            yarn
+            yarn --non-interactive
+            node ace build --production
+            cp ./.env ./build/
+            cd build
+            yarn install --production
             node ace migration:run --force
             pm2 restart MonoServer
