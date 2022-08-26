@@ -37,7 +37,7 @@ export default class UsersController {
   }
 
   public async delete({ auth }) {
-    (await User.find(auth.user.id))?.delete()
+    return (await User.find(auth.user.id))?.delete()
   }
 
   public async logout({}) {
