@@ -8,7 +8,7 @@ export default class UsersController {
     const email = request.input('email')
     const password = request.input('password')
 
-    return await auth.attempt(email, password)
+    return { ...(await auth.attempt(email, password)) }
   }
 
   public async register({ request, response }) {
